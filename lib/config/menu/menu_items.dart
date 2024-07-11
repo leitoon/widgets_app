@@ -19,7 +19,7 @@ class MenuItem {
     icon: Icons.smart_button_outlined),
     MenuItem(
     tittle: 'Tarjetas',
-    subTittle: 'Un contenedor estilizadp',
-    link: '/buttons',
+    subTittle: 'Un contenedor estilizado',
+    link: '/cards',
     icon: Icons.credit_card)
 ];
