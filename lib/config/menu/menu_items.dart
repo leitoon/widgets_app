@@ -36,5 +36,10 @@ class MenuItem {
     tittle: 'Animated Controller',
     subTittle: 'Stateful widget animado',
     link: '/animated',
-    icon: Icons.check_box_outlined)
+    icon: Icons.check_box_outlined),
+    MenuItem(
+    tittle: 'Ui Controls + Tiles',
+    subTittle: 'Una serie de controles de Flutter',
+    link: '/ui-controls',
+    icon: Icons.car_rental_outlined)
 ];

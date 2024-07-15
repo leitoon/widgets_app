@@ -47,6 +47,13 @@ final appRouter = GoRouter(
             return  AnimatedScreen();
           },
         ),
+        GoRoute(
+          name: UiScreen.name,
+          path: '/ui-controls',
+          builder: (context,state) {
+            return  UiScreen();
+          },
+        ),
       ],
   );
 
