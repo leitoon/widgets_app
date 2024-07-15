@@ -54,6 +54,13 @@ final appRouter = GoRouter(
             return  UiScreen();
           },
         ),
+        GoRoute(
+          name: AppTutorialScreen.name,
+          path: '/AppTutorialScreen',
+          builder: (context,state) {
+            return  AppTutorialScreen();
+          },
+        ),
       ],
   );
 
