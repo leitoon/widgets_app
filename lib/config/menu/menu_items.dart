@@ -23,8 +23,13 @@ class MenuItem {
     link: '/cards',
     icon: Icons.credit_card),
     MenuItem(
-    tittle: 'ProgressIndicators',
+    tittle: 'Progress Indicators',
     subTittle: 'Generales y controlados',
     link: '/progress',
-    icon: Icons.refresh_rounded)
+    icon: Icons.refresh_rounded),
+    MenuItem(
+    tittle: 'Snackbars y dialogos',
+    subTittle: 'Indicadores en pantalla',
+    link: '/snackscreen',
+    icon: Icons.info_outline)
 ];
