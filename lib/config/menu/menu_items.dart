@@ -31,5 +31,10 @@ class MenuItem {
     tittle: 'Snackbars y dialogos',
     subTittle: 'Indicadores en pantalla',
     link: '/snackscreen',
-    icon: Icons.info_outline)
+    icon: Icons.info_outline),
+    MenuItem(
+    tittle: 'Animated Controller',
+    subTittle: 'Stateful widget animado',
+    link: '/animated',
+    icon: Icons.check_box_outlined)
 ];
