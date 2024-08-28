@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
+import 'package:widgets_app/presentation/widgets/side_menu.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -9,13 +10,16 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scaffolkey= GlobalKey<ScaffoldState>();
     return Scaffold
     (
+      key: scaffolkey,
       appBar: AppBar
       (
         title: Text('Flutter'),
       ),
       body: _HomeView(),
+      drawer: SideMenu(scaffolkey: scaffolkey,)
     );
     
   }
@@ -53,6 +57,7 @@ class _CustomListTile extends StatelessWidget {
      subtitle: Text(menuItem.subTittle),
      onTap: () {
       context.push(menuItem.link);
+      
        //Navigator.pushNamed(context, menuItem.link);
       // context.pushNamed(CardsScreen.name);
      },
