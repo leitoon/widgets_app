@@ -13,17 +13,17 @@ class ThemeChangeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final theme= ref.watch(themeProvider);
+    final isDarkmode= ref.watch(themeProvider);
     return Scaffold(
       appBar: AppBar(
         title: Text('Theme changer'),
         actions: [
           IconButton(
             onPressed: (){
-              ref.read(themeProvider.notifier).update((state) => !theme);
+              ref.read(themeProvider.notifier).update((state) => !state);
             },
             
-           icon: theme? Icon(Icons.light_mode_outlined):Icon(Icons.dark_mode_outlined)
+           icon: isDarkmode? Icon(Icons.light_mode_outlined):Icon(Icons.dark_mode_outlined)
 
            )
         ],
@@ -41,6 +41,8 @@ class _ThemeChangerView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     final List<Color> colors = ref.watch(colorListProvider);
+    final int selectedColor= ref.watch(selectedColorProvider);
+    
     return ListView.builder(
       itemCount: colors.length,
       itemBuilder: (context,index){
@@ -50,9 +52,9 @@ class _ThemeChangerView extends ConsumerWidget {
         subtitle: Text('${color.value}'),
         activeColor: color,
         value: index,
-         groupValue: 0,
+         groupValue: selectedColor,
           onChanged: (value){
-
+            ref.read(selectedColorProvider.notifier).state =index;
           });
     });
   }

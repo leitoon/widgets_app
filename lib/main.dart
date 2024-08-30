@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:widgets_app/config/router/app_router.dart';
 import 'package:widgets_app/config/theme/app_theme.dart';
 
+import 'presentation/providers/theme_provider.dart';
+
 void main() {
   runApp(
      const ProviderScope(
@@ -12,16 +14,18 @@ void main() {
     );
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends ConsumerWidget {
   const MainApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
+    final isDarkmode= ref.watch(themeProvider);
+    final int selectedColor= ref.watch(selectedColorProvider);
     return  MaterialApp.router(
       title: 'Flutter Widget',
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: 0).getTheme(),
+      theme: AppTheme(selectedColor: selectedColor, isDarkmode: !isDarkmode).getTheme(),
       
     );
   }
